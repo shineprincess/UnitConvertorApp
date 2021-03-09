@@ -45,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
         String s = editText.getText().toString();
         int Kg= Integer.parseInt(s);
         double pound = 2.205 * Kg;
-        textView.setText("The corresponding value in Pounds is " + pound);
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
+        textView.setText("The corresponding value in Pounds is " + df.format(pound));
         Toast.makeText(this,"Thanks for using my app",Toast.LENGTH_SHORT).show();
     }
 }
